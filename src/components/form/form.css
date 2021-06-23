@@ -1,0 +1,72 @@
+.form-body{
+    padding-inline: 4rem;
+}
+
+.form-text{
+    font-size: 2.5rem;
+    padding-block: 3rem;
+    font-weight: bold;
+}
+
+.button-container{
+    margin-top: 2rem;
+    display: flex;  
+    flex-direction: row-reverse;
+}
+
+.form-body .form-button{
+    background-color: #0046BE;
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    width: 20rem;
+    height: 7rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.form-body .form-button:hover{
+    background-color: #09409e;
+}
+
+.rating-text{
+    display: flex;
+    justify-content: space-between;
+    font-size: 2vw;
+}
+
+.rating-buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.rating-buttons .radio{
+    margin-bottom: 4rem;
+    font-size: 4vw;
+    min-width: 5vw;
+    background-color: #d5d5d5;
+    border-radius: 5px;
+    padding-inline: 1.5rem;
+    border: none;
+}
+
+
+
+.rating-buttons .radio.checked{
+    background-color: #0046BE;
+    color: white;
+}
+
+.text-input{
+    padding: 1rem; 
+    width: 100%;
+    border: 1px solid #d5d5d5;
+    font-size: 2.5rem;
+}
+
+.form-subtext{
+    font-size: 2rem;
+    padding-block: 1rem;
+    font-weight: bold;
+}
+

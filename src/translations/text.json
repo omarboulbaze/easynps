@@ -1,0 +1,31 @@
+{
+    "english":{
+        "introduction" : "Thank you for shopping at Best Buy during these unprecedented times. We are very quickly evolving how we do business so we can continue to enrich your life with technology, while keeping you and our employees as safe as possible. Your feedback is more important than ever.   By taking part in this short survey, you can be assured that your voice will be heard. At the end of the survey, you will have the opportunity to enter a drawing for a $1,000 gift card, valid for Best Buy / Best Buy Mobile® merchandise. Thanks in advance for your time and input.",
+        "ltr" : "Based on this experience, how likely are you to recommend Best Buy® to your friends and family?",
+        "notLikely":"Not at all Likely",
+        "extremeLikely":"Extreme Likely",
+        "ltrComment": "Why did you choose this response?",
+        "availability":"Veuillez attribuer une note à la disponibilité des employés pour vous venir en aide :",
+        "rating":"Veuillez attribuer une note à l’employé avec qui vous avez interagi concernant :",
+        "poor":"Poor",
+        "excellent":"Excellent",
+        "caring":"Caring about you",
+        "expert":"Ability to provide expert advice"
+    },
+    "french":{
+        "introduction": "Merci de magasiner chez Best Buy pendant cette période sans précédent. Nous changeons très rapidement notre façon de faire des affaires afin de pouvoir continuer à enrichir votre vie avec la technologie, tout en vous gardant, vous et nos employés, en sécurité autant que possible. En participant à ce court sondage, soyez sûr que votre voix sera entendue. À la fin du sondage, vous pourrez participer à un tirage pour tenter de gagner une carte-cadeau d’une valeur de 1000 $, valable sur les produits de Best Buy / Best Buy Mobile®. Merci d'avance pour votre temps et vos commentaires.",
+        "ltr" : "Selon cette expérience, quelle est la probabilité que vous recommandiez Best Buy® à votre famille et à vos amis?",
+        "notLikely":"Pas du tout probable",
+        "extremeLikely":"Extrêmement probable",
+        "ltrComment": "Pourquoi avez-vous choisi cette réponse?",
+        "availability":"Veuillez attribuer une note à la disponibilité des employés pour vous venir en aide :",
+        "rating":"Veuillez attribuer une note à l’employé avec qui vous avez interagi concernant :",
+        "poor":"Mauvais",
+        "excellent":"Excellent",
+        "caring":"L’attention qu’il vous a portée",
+        "expert":"La capacité à fournir des conseils d’expert"
+    }
+}   
+   
+    
+   

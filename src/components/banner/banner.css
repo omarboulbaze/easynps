@@ -1,0 +1,9 @@
+.banner{
+    background-color: #0046BE;
+    padding: 2rem;
+}
+
+.banner .logo{
+    max-width: 15rem;
+}
+

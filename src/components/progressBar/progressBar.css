@@ -1,0 +1,16 @@
+.background{
+    width: auto;
+    margin: 2rem;
+}
+
+.background .progress{
+    background-color: #d5d5d5;
+}
+
+.progress-text{
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    
+}
+
