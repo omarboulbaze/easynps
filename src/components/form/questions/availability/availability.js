@@ -1,7 +1,6 @@
-import text from '../../../../translations/text.json'
 import {useState} from 'react'
 
-function Availability(){
+function Availability(props){
 
     const [rating, setRating] = useState();
 
@@ -12,12 +11,12 @@ function Availability(){
     return(
         <>
             <p className="form-text">
-                {text.french.availability}
+                {props.text.availability}
             </p>
             <div className="rating">
                 <div className="rating-text">
-                    <span>{text.french.poor}</span>
-                    <span>{text.french.excellent}</span>
+                    <span>{props.text.poor}</span>
+                    <span>{props.text.excellent}</span>
                 </div>
                 <div className="rating-buttons">
                     {

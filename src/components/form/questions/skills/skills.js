@@ -1,7 +1,6 @@
-import text from '../../../../translations/text.json'
 import {useState} from 'react'
 
-function Skills(){
+function Skills(props){
 
     const [rating1, setRating1] = useState();
     const [rating2, setRating2] = useState();
@@ -17,17 +16,17 @@ function Skills(){
     return(
         <>
             <p className="form-text">
-                {text.french.rating}
+                {props.text.rating}
             </p>
             <div className="rating">
 
                 <p className="form-subtext">
-                {text.french.caring}
+                {props.text.caring}
                 </p>
 
                 <div className="rating-text">
-                    <span>{text.french.poor}</span>
-                    <span>{text.french.excellent}</span>
+                    <span>{props.text.poor}</span>
+                    <span>{props.text.excellent}</span>
                 </div>
 
                 <div className="rating-buttons">
@@ -39,12 +38,12 @@ function Skills(){
                 </div>
                 
                 <p className="form-subtext">
-                {text.french.expert}
+                {props.text.expert}
                 </p>
 
                 <div className="rating-text">
-                    <span>{text.french.poor}</span>
-                    <span>{text.french.excellent}</span>
+                    <span>{props.text.poor}</span>
+                    <span>{props.text.excellent}</span>
                 </div>
                 <div className="rating-buttons">
                     {

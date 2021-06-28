@@ -1,7 +1,7 @@
-import text from '../../../../translations/text.json'
+
 import {useState} from 'react'
 
-function Ltr(){
+function Ltr(props){
 
 const [inputVisible, setInputVisible] = useState(false);
 const [rating, setRating] = useState();
@@ -14,12 +14,12 @@ function ratingOnClick(num){
     return(
         <>
             <p className="form-text">
-                {text.french.ltr}
+                {props.text.ltr}
             </p>
             <div className="rating">
                 <div className="rating-text">
-                    <span>{text.french.notLikely}</span>
-                    <span>{text.french.extremeLikely}</span>
+                    <span>{props.text.notLikely}</span>
+                    <span>{props.text.extremeLikely}</span>
                 </div>
                 <div className="rating-buttons">
                     {
@@ -32,10 +32,11 @@ function ratingOnClick(num){
             { inputVisible &&
                 <>
             <p className="form-text">
-                {text.french.ltrComment}
+                {props.text.ltrComment}
             </p>
             
-                <input type="text" className="text-input" name="ltrComment" placeholder="Veuillez saisir votre réponse ici."/>
+                <input type="text" className="text-input" name="ltrComment" placeholder={props.text.placeholder}/>
+                <span className="textarea" role="textbox" contentEditable></span>
             
                 </>
             }

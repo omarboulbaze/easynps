@@ -1,10 +1,10 @@
-import text from '../../../../translations/text.json'
 
-function Introduction(){
+
+function Introduction(props){
     return(
         <>
             <p className="form-text">
-                        {text.french.introduction}
+                        {props.text.introduction}
             </p>
         </>
     )
