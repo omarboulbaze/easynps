@@ -1,5 +1,5 @@
 //importing react
-import { useState } from "react";
+import { useState, useEffect} from "react";
 //importing style
 import "./App.css";
 //importing components
@@ -42,8 +42,17 @@ function App() {
                         ]
     const [question, setQuestion] = useState(0);
     const percentage = parseInt(( (question + 1 )/questionTab.length) * 100);
+
+    const [nextBtnVisible, setNextBtnVisible] = useState(true);
     
     
+    useEffect(() => {
+        if(percentage>=100){
+            setNextBtnVisible(false)
+        }
+       
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+       },[question]);
 
     return (
 
@@ -51,7 +60,7 @@ function App() {
            <Alert text={text} alertVisible={alertVisible} setAlertVisible={setAlertVisible}/>
            <Banner/>
            <ProgressBar max={questionTab.length} percentage={percentage}/>
-           <Form question={question} questionTab={questionTab} setQuestion={setQuestion} setAlertVisible={setAlertVisible} formCompleted={formCompleted}/>
+           <Form question={question} questionTab={questionTab} setQuestion={setQuestion} setAlertVisible={setAlertVisible} formCompleted={formCompleted} nextBtnVisible={nextBtnVisible}/>
            <Footer/>
         </>
         
