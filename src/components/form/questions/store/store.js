@@ -1,5 +1,5 @@
 
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 function Store(props){
 
@@ -48,6 +48,16 @@ function Store(props){
     function ratingOnClick9(num){
         setRating9(num);
     }
+
+    useEffect(() => {
+        if(rating1 && rating2 && rating3 && rating4 && rating5 && rating6 && rating7 && rating8 && rating9 ){
+            props.setFormCompleted(true)
+        }else{
+            props.setFormCompleted(false)
+        }
+       
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+       },[rating1, rating2, rating3, rating4, rating5, rating6, rating7, rating8, rating9]);
 
     return(
         <>

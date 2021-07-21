@@ -7,6 +7,7 @@ import Banner from './components/banner/banner';
 import ProgressBar from './components/progressBar/progressBar';
 import Form from './components/form/form';
 import Footer from './components/footer/footer';
+import Alert from "./components/alert/alert";
 //importing form components
 import Introduction from './components/form/questions/introduction/introduction';
 import Ltr from './components/form/questions/ltr/ltr'
@@ -24,26 +25,33 @@ const text = translations.english;
 
 function App() {
     
+    const [alertVisible, setAlertVisible] = useState(false);
+
+    const [formCompleted, setFormCompleted] = useState(false);
+
     const questionTab = [
-                        <Introduction text={text}/>,
-                        <Ltr text={text}/>,
-                        <Availability text={text}/>,
-                        <Skills text={text}/>,
-                        <Store text={text}/>, 
-                        <Personal text={text}/>, 
-                        <Overall text={text}/>, 
-                        <Sweepstake text={text}/>, 
+                        <Introduction text={text} setFormCompleted={setFormCompleted}/>,
+                        <Ltr text={text} setFormCompleted={setFormCompleted} />,
+                        <Availability text={text} setFormCompleted={setFormCompleted}/>,
+                        <Skills text={text} setFormCompleted={setFormCompleted}/>,
+                        <Store text={text} setFormCompleted={setFormCompleted}/>, 
+                        <Personal text={text} setFormCompleted={setFormCompleted}/>, 
+                        <Overall text={text} setFormCompleted={setFormCompleted}/>, 
+                        <Sweepstake text={text} setFormCompleted={setFormCompleted}/>, 
                         <Thanks text={text}/>
                         ]
     const [question, setQuestion] = useState(0);
     const percentage = parseInt(( (question + 1 )/questionTab.length) * 100);
     
+    
+
     return (
 
         <>
+           <Alert text={text} alertVisible={alertVisible} setAlertVisible={setAlertVisible}/>
            <Banner/>
            <ProgressBar max={questionTab.length} percentage={percentage}/>
-           <Form question={question} questionTab={questionTab} setQuestion={setQuestion}/>
+           <Form question={question} questionTab={questionTab} setQuestion={setQuestion} setAlertVisible={setAlertVisible} formCompleted={formCompleted}/>
            <Footer/>
         </>
         

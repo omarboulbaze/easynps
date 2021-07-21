@@ -1,15 +1,30 @@
 
-import {useState} from 'react'
+import { useEffect, useState} from 'react'
 
 function Ltr(props){
 
 const [inputVisible, setInputVisible] = useState(false);
 const [rating, setRating] = useState();
 
+
+useEffect(() => {
+    if(rating){
+        props.setFormCompleted(true)
+    }else{
+        props.setFormCompleted(false)
+    }
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[rating]);
+
+
 function ratingOnClick(num){
     setRating(num);
     setInputVisible(true);
 }
+
+
+
+
 
     return(
         <>

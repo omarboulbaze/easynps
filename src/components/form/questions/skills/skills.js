@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 function Skills(props){
 
@@ -7,11 +7,24 @@ function Skills(props){
 
     function ratingOnClick1(num){
         setRating1(num);
+        
     }
 
     function ratingOnClick2(num){
         setRating2(num);
     }
+
+    useEffect(() => {
+        if(rating1 && rating2){
+            props.setFormCompleted(true)
+        }else{
+            props.setFormCompleted(false)
+        }
+       
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+       },[rating1, rating2]);
+
+
 
     return(
         <>

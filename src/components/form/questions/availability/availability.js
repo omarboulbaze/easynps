@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 function Availability(props){
 
@@ -7,6 +7,18 @@ function Availability(props){
     function ratingOnClick(num){
         setRating(num);
     }
+
+    useEffect(() => {
+
+        if(rating){
+            props.setFormCompleted(true)
+        }else{
+            props.setFormCompleted(false)
+        }
+       
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+       },[rating]);
+     
 
     return(
         <>

@@ -1,0 +1,28 @@
+.container-alert{
+    background-color: #BB0628;
+    color: #ffffff;
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 2rem;
+    position: absolute;
+    width: 100vw;
+    animation: alert 1s;
+}
+
+@keyframes alert{
+    0%{top:-100px}
+    100%{top:0px}
+}
+
+.btn-close{
+    border: 0.3rem solid white;
+    display: inline;
+    float: right;
+    border-radius: 50%;
+    padding-inline: 1.3rem;
+}
+
+.btn-close:hover{
+    opacity: 0.8;
+}
+

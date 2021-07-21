@@ -4,15 +4,15 @@ import {useState, useEffect} from 'react'
 function Sweepstake(props){
 
 const [formVisible, setFormVisible] = useState(false);
-const [respone, setResponse] = useState();
+const [response, setResponse] = useState();
 
 useEffect(() => {
-    if(respone==="yes"){
+    if(response==="yes"){
         setFormVisible(true)
     }else{
         setFormVisible(false)
     }
-  }, [respone]); // Only re-run the effect if count changes
+  }, [response]); // Only re-run the effect if count changes
 
     return(
         <>

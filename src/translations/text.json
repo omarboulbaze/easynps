@@ -5,6 +5,7 @@
         "notLikely":"Not at all Likely",
         "extremeLikely":"Extreme Likely",
         "ltrComment": "Why did you choose this response?",
+        "placeholder":"Please type here.",
         "availability":"Please rate the availability of employees to assist you:",
         "rating":"Please rate the employee that you interacted with in terms of:",
         "poor":"Poor",
@@ -55,7 +56,8 @@
         "thanksTitle":"Thanks for your time and feedback!",
         "thanksMessage":"Best Buy® is always exploring ways to make your shopping experience better. We value your input and look forward to serving you again!",
         "thanksAgain":"Thanks again,",
-        "bestBuyTeam":"The Best Buy® Team"
+        "bestBuyTeam":"The Best Buy® Team",
+        "error":"Please provide an answer."
     },
     "french":{
         "introduction": "Merci de magasiner chez Best Buy pendant cette période sans précédent. Nous changeons très rapidement notre façon de faire des affaires afin de pouvoir continuer à enrichir votre vie avec la technologie, tout en vous gardant, vous et nos employés, en sécurité autant que possible. En participant à ce court sondage, soyez sûr que votre voix sera entendue. À la fin du sondage, vous pourrez participer à un tirage pour tenter de gagner une carte-cadeau d’une valeur de 1000 $, valable sur les produits de Best Buy / Best Buy Mobile®. Merci d'avance pour votre temps et vos commentaires.",
@@ -114,7 +116,8 @@
         "thanksTitle":"Nous vous remercions pour votre temps et votre rétroaction!",
         "thanksMessage":"Best Buy® cherche constamment des façons d'améliorer votre expérience de magasinage. Vos commentaires sont importants et nous avons hâte de pouvoir à nouveau vous servir!",
         "thanksAgain":"Merci encore,",
-        "bestBuyTeam":"L'équipe Best Buy®"
+        "bestBuyTeam":"L'équipe Best Buy®",
+        "error":"Veuillez donner une réponse."
 
     }
 }   

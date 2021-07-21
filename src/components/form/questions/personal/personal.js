@@ -61,6 +61,10 @@ function Personal(props){
                 <input type="radio" name="age" id="from65plus" value="from65plus"/>
                 <span className="checkmark"></span>
             </label>
+            <label className="radioContainer" htmlFor="preferNotToSay2">{props.text.preferNotToSay}
+                <input type="radio" name="age" id="preferNotToSay2" value="preferNotToSay2"/>
+                <span className="checkmark"></span>
+            </label>
             
             
         </>
