@@ -5,27 +5,36 @@ function Ltr(props){
 
 const [inputVisible, setInputVisible] = useState(false);
 const [rating, setRating] = useState();
+const [ltrComment, setLtrComment] = useState("");
 
 
 useEffect(() => {
+
     if(rating){
+        props.setLtr(rating)
         props.setFormCompleted(true)
     }else{
         props.setFormCompleted(false)
     }
+
    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[rating]);
 
+  useEffect(()=> {
+    props.setLtrComment(ltrComment);
+       // eslint-disable-next-line react-hooks/exhaustive-deps
+},[ltrComment])
 
 function ratingOnClick(num){
     setRating(num);
     setInputVisible(true);
 }
 
+function onChangeHandler(event){
+    setLtrComment(event.target.value);
+  };
 
-
-
-
+ 
     return(
         <>
             <p className="form-text">
@@ -50,7 +59,7 @@ function ratingOnClick(num){
                 {props.text.ltrComment}
             </p>
             
-                <input type="text" className="text-input" name="ltrComment" placeholder={props.text.placeholder}/>
+                <input type="text" className="text-input" name="ltrComment" placeholder={props.text.placeholder} value={ltrComment} onChange={onChangeHandler}/>
                 <span className="textarea" role="textbox" contentEditable></span>
             
                 </>

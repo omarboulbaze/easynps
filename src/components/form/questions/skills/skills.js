@@ -24,7 +24,16 @@ function Skills(props){
         // eslint-disable-next-line react-hooks/exhaustive-deps
        },[rating1, rating2]);
 
-
+       useEffect(() => {
+        props.setCaringAboutYou(rating1)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+       },[rating1]);
+       
+       useEffect(() => {
+        props.setExpertAdvice(rating2)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+       },[rating2]);
+       
 
     return(
         <>

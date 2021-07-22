@@ -4,7 +4,7 @@
     font-size: 3rem;
     font-weight: bold;
     padding: 2rem;
-    position: absolute;
+    position: fixed;
     width: 100vw;
     animation: alert 1s;
 }

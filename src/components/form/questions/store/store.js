@@ -59,6 +59,52 @@ function Store(props){
         // eslint-disable-next-line react-hooks/exhaustive-deps
        },[rating1, rating2, rating3, rating4, rating5, rating6, rating7, rating8, rating9]);
 
+       useEffect(() => {
+        props.setVarietyOfProducts(rating1)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+       },[rating1]);
+
+       useEffect(() => {
+        props.setProductInStock(rating2)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+       },[rating2]);
+
+       useEffect(() => {
+        props.setDemos(rating3)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+       },[rating3]);
+
+       useEffect(() => {
+        props.setFriendliness(rating4)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+       },[rating4]);
+
+       useEffect(() => {
+        props.setPricesCompetition(rating5)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+       },[rating5]);
+
+       useEffect(() => {
+        props.setStoreAppearence(rating6)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+       },[rating6]);
+
+       useEffect(() => {
+        props.setSafeToShop(rating7)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+       },[rating7]);
+
+       useEffect(() => {
+        props.setEaseOfShopping(rating8)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+       },[rating8]);
+
+       useEffect(() => {
+        props.setCleaning(rating9)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+       },[rating9]);
+
+
     return(
         <>
             <p className="form-text">

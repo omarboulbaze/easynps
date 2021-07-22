@@ -11,11 +11,12 @@ function Availability(props){
     useEffect(() => {
 
         if(rating){
+            props.setAvailability(rating)
             props.setFormCompleted(true)
         }else{
             props.setFormCompleted(false)
         }
-       
+
         // eslint-disable-next-line react-hooks/exhaustive-deps
        },[rating]);
      
