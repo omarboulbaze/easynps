@@ -82,7 +82,7 @@ function App() {
         if(percentage>=100){
             setNextBtnVisible(false);
 
-            axios.post('http://localhost:3001/addReview', {
+            axios.post('http://192.168.0.186:3001/addReview', {
                 language: 'EN',
                 date: new Date().toISOString(),
                 ltr: ltr,
@@ -130,13 +130,7 @@ function App() {
            <Alert text={text} alertVisible={alertVisible} setAlertVisible={setAlertVisible}/>
            <Banner/>
            <ProgressBar max={questionTab.length} percentage={percentage}/>
-           <Form question={question} questionTab={questionTab} setQuestion={setQuestion} setAlertVisible={setAlertVisible} formCompleted={formCompleted} nextBtnVisible={nextBtnVisible} 
-           /* setLtrComment={setLtrComment} setAvailability={setAvailability} setCaringAboutYou={setCaringAboutYou} setExpertAdvice={setExpertAdvice} 
-           setVarietyOfProducts={setVarietyOfProducts} setProductInStock={setProductInStock} setDemos={setDemos} setFriendliness={setFriendliness} setPricesCompetition={setPricesCompetition} 
-           setStoreAppearence={setStoreAppearence} setSafeToShop={setSafeToShop} setEaseOfShopping={setEaseOfShopping} setCleaning={setCleaning} setGender={setGender} setAge={setAge} 
-           setFeedback={setFeedback} setFirstName={setFirstName} setLastName={setLastName} setAddress={setAddress} setApp={setApp} setCity={setCity} setProvince={setProvince} 
-           setPostal={setPostal} setPhoneNumber={setPhoneNumber} setEmail={setEmail} */
-           />
+           <Form question={question} questionTab={questionTab} setQuestion={setQuestion} setAlertVisible={setAlertVisible} formCompleted={formCompleted} nextBtnVisible={nextBtnVisible}/>
            <Footer/>
         </>
         

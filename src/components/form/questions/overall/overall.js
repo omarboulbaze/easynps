@@ -1,7 +1,20 @@
 
+import {useEffect, useState} from 'react'
+
 
 
 function Overall(props){
+
+    const [feedback, setFeedback] = useState();
+
+useEffect(()=> {
+    props.setFeedback(feedback);
+       // eslint-disable-next-line react-hooks/exhaustive-deps
+},[feedback])
+
+function onChangeHandler(event){
+    setFeedback(event.target.value);
+  };
 
     return(
         <>
@@ -9,7 +22,7 @@ function Overall(props){
                 {props.text.overall}
             </p>
             
-            <textarea className="text-input" rows = "5" cols = "60" name = "overallComment" placeholder={props.text.placeholder}>
+            <textarea className="text-input" rows = "5" cols = "60" name = "overallComment" placeholder={props.text.placeholder} value={feedback} onChange={onChangeHandler}>
             </textarea>
 
             <p className="form-subtext">
