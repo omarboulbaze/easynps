@@ -1,6 +1,6 @@
 .background{
     width: auto;
-    margin: 2rem;
+    margin: 1rem;
 }
 
 .background .progress{
@@ -9,7 +9,7 @@
 
 .progress-text{
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 1rem;
     font-weight: bold;
     
 }

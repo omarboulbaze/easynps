@@ -1,7 +1,7 @@
 //importing react
 import { useState, useEffect} from "react";
 //importing style
-import "./App.css";
+// import "./App.css";
 //importing components
 import Banner from './components/banner/banner';
 import ProgressBar from './components/progressBar/progressBar';
@@ -20,6 +20,7 @@ import Sweepstake from "./components/form/questions/sweepstake/sweepstake";
 import Thanks from "./components/form/questions/thanks/thanks";
 //importing text
 import translations from "./translations/text.json";
+
 //importing axios
 const axios = require('axios');
 

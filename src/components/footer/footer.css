@@ -1,10 +1,12 @@
 .footer{
-    margin: 1rem;
-    margin-top: 5rem;
-    padding-top:3rem;
+    padding: 2rem;
+    margin: auto;
+    margin-top: 4rem;
+    padding-top:1rem;
     display: block;
-    border-top: solid 1.5px #9ea4ad;
-    font-size: 2.5rem; 
+    border-top: solid 1px #e3e3e4;
+    font-size: 1rem; 
+    max-width: 1232px;
 }
 
 .footer a{
@@ -12,6 +14,6 @@
 }
 
 .separator{
-    padding-inline: 2.5rem;
+    padding-inline: 0.5rem;
     color: #E0E6EF;
 }
