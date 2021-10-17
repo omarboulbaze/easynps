@@ -3,13 +3,13 @@ import "./banner.css";
 
 
 //importing logo
-import bestbuyLogo from '../../img/bestbuyLogo.png'; 
-function Banner() {
+import bestbuyLogo from '../../images/bestbuyLogo.png'; 
+function Banner(props) {
     
     return (
 
             <div className="banner">
-            <img src={bestbuyLogo} alt="Besy Buy Logo" className="logo" />
+            <a href={props.link}><img src={bestbuyLogo} alt="Besy Buy Logo" className="logo" /></a>
             </div>
        
             );
