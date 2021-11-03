@@ -3,6 +3,10 @@ const mongoose = require('mongoose');
 
 const ReviewSchema = new mongoose.Schema({
     language:String,
+    productType:String,
+    groupA:String,
+    groupB:String,
+    groupC:String,
     date:Date,
     ltr:Number,
     ltrComment:String,

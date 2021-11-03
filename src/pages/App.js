@@ -1,7 +1,5 @@
 //importing react
 import { useState, useEffect} from "react";
-//importing style
-// import "./App.css";
 //importing components
 import Banner from '../components/banner/banner';
 import ProgressBar from '../components/progressBar/progressBar';
@@ -24,10 +22,22 @@ import translations from "../translations/text.json";
 //importing axios
 const axios = require('axios');
 
-const text = translations.english;
+//fetch URL paramaters
+const params = new URLSearchParams(window.location.search);
+
+
+
 
 function App() {
     
+    //dynamic language for the web application
+    const [text,setText] = useState(translations.french);
+
+    //determining which language to be displayed using the GET parameters provided in the URL
+    useEffect(()=>{
+    if(params.get('l')==="eng"){ setText(translations.english) }else{ setText(translations.french) }
+    },[])
+
     const [alertVisible, setAlertVisible] = useState(false);
 
     const [formCompleted, setFormCompleted] = useState(false);
@@ -84,7 +94,11 @@ function App() {
             setNextBtnVisible(false);
 
             axios.post('http://192.168.0.186:3001/addReview', {
-                language: 'EN',
+                language: params.get('l'),
+                productType: params.get('pt'),
+                groupA: params.get('a'),
+                groupB: params.get('b'),
+                groupC: params.get('c'),
                 date: new Date().toISOString(),
                 ltr: ltr,
                 ltrComment: ltrComment,

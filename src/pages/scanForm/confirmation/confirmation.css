@@ -1,0 +1,12 @@
+.confirmation-container{
+    background-color: rgb(248, 248, 248);
+    padding: 1rem;
+    border-radius: 10px;
+    align-items:left;
+}
+
+/* overriding bootstrap outline in inputs */
+  input[type = text]:focus {
+    border: 0.5px solid rgb(153, 153, 153);
+    box-shadow: none;
+   }

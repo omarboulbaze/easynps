@@ -5,7 +5,7 @@ import {useEffect, useState} from 'react'
 
 function Overall(props){
 
-    const [feedback, setFeedback] = useState();
+    const [feedback, setFeedback] = useState("");
 
 useEffect(()=> {
     props.setFeedback(feedback);

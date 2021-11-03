@@ -1,0 +1,61 @@
+.scan-body{
+    margin-inline: 0.4rem;
+}
+
+
+.container-ok{
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    margin-bottom: 5rem;
+}
+
+
+.container-ok button{
+    margin-inline: auto;
+    padding: 0.4rem;
+    padding-inline: 1.5rem;
+    background-color: transparent;
+    color: #0046BE;
+    border: 1px solid #0046BE;
+    border-radius: 5px;
+    font-size: 1rem;
+ }
+
+ .container-ok button:hover{
+     color: white;
+     background-color: #0e2f68;
+ }
+
+
+.scan-button{
+   margin-inline: auto;
+   background-color: #0046BE;
+   padding: 0.8rem;
+   padding-inline: 1.5rem;
+   color: white;
+   border: 1px solid ;
+   border-radius: 5px;
+   font-size: 1rem;
+}
+
+.scan-button:hover{
+    background-color: #0e2f68;
+}
+
+.scan-button.active{
+    background-color: #0e2f68;
+}
+
+.scan-container{
+    display: grid;
+  place-items: center;
+}
+
+.form-text{
+    font-size: 1rem;
+    padding-block: 1rem;
+    font-weight: bold;
+}
+
+

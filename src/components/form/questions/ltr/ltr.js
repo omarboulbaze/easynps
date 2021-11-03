@@ -60,8 +60,6 @@ function onChangeHandler(event){
             </p>
             
                 <input type="text" className="text-input" name="ltrComment" placeholder={props.text.placeholder} value={ltrComment} onChange={onChangeHandler}/>
-                <span className="textarea" role="textbox" contentEditable></span>
-            
                 </>
             }
         </>
