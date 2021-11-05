@@ -21,8 +21,8 @@ function Language(props){
         <p className="form-text">Quelle langue avez-vous utilisé lors de votre interaction avec le client ?</p>
         
         <div className="my-4">
-        <button className={language==="FR" ? "scan-button active" : "scan-button"}  onClick={()=> changeLanguage("fr") } >Français</button>
-        <button className={language==="ENG" ? "scan-button active" : "scan-button"}  onClick={()=> changeLanguage("eng")} >Anglais</button>
+        <button className={language==="fr" ? "scan-button active" : "scan-button"}  onClick={()=> changeLanguage("fr") } >Français</button>
+        <button className={language==="eng" ? "scan-button active" : "scan-button"}  onClick={()=> changeLanguage("eng")} >Anglais</button>
         </div>
 
         </div>

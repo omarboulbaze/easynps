@@ -18,10 +18,12 @@ function Confirmation(props){
     const today = new Date(Date.now());
 
     const monthArray = ()=>{
-        if(today.getMonth().toString().length === 1) {
-            return "0"+today.getMonth()
+        //JavaScript method getMonth() in this case starts a month at 0 (January) and finish at December (11), so I manually added one to avoid confusions and bugs
+        let getMonthPlusOne = today.getMonth() + 1
+        if(getMonthPlusOne.toString().length === 1) {
+            return "0"+ getMonthPlusOne
         }else{
-            return today.getMonth().toString().split('');
+            return getMonthPlusOne.toString().split('');
         }
     }
 
@@ -37,6 +39,7 @@ function Confirmation(props){
        return today.getFullYear().toString().split('');
     }
 
+    
     //creating the NPS code based on the informations entered
     const groupA = dayArray()[0]+"9"+dayArray()[1]+cashArray[1]+cashArray[2]+billArray[0] || "";
     const groupB = 6+billArray[1]+billArray[2]+billArray[3] || "";
@@ -54,19 +57,19 @@ function Confirmation(props){
                 <div className="input-group-prepend">
                 <span className="input-group-text" id="basic-addon1">Groupe A</span>
                 </div>
-                <input type="text" className="form-control" placeholder={groupA} readOnly/>
+                <input type="text" className="form-control" value={groupA} readOnly/>
             </div>
             <div className="input-group">
                 <div className="input-group-prepend">
                 <span className="input-group-text" id="basic-addon1">Groupe B</span>
                 </div>
-                <input type="text" className="form-control" placeholder={groupB} readOnly/>
+                <input type="text" className="form-control" value={groupB} readOnly/>
             </div>
             <div className="input-group">
                 <div className="input-group-prepend">
                 <span className="input-group-text" id="basic-addon1">Groupe C</span>
                 </div>
-                <input type="text" className="form-control" placeholder={groupC} readOnly/>
+                <input type="text" className="form-control" value={groupC} readOnly/>
             </div>
         </div>
 
