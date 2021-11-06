@@ -43,9 +43,9 @@ function Employee(props){
             //checking if bill number is on this format XXXX.
             if(bill.length === 1){
               props.setBill("000"+bill);
-            }else if(cash.length === 2){
+            }else if(bill.length === 2){
               props.setBill("00"+bill);
-            }else if(cash.length === 3){
+            }else if(bill.length === 3){
               props.setBill("0"+bill);
             }else{
               props.setBill(bill);

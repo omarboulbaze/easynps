@@ -46,8 +46,8 @@ function Confirmation(props){
     const groupC = monthArray()[0]+"2"+monthArray()[1]+yearArray()[2]+yearArray()[3]+0+firstNameArray[2]+lastNameArray[0]+firstNameArray[0]+firstNameArray[1]+"00" || "";
     
     //Data stored in the QR code : l= Language, pt= Product Type, a= Group A, b= Group B, c= Group C
-    // const qrCodeLink = `http://192.168.0.186:3000/?l=${props.language}&a=${groupA}&b=${groupB}&c=${groupC}&pt=${props.productType}`
-    const qrCodeLink = `https://easynps.herokuapp.com/?l=${props.language}&a=${groupA}&b=${groupB}&c=${groupC}&pt=${props.productType}`
+    const qrCodeLink = window.location.origin + `/?l=${props.language}&a=${groupA}&b=${groupB}&c=${groupC}&pt=${props.productType}`
+    // const qrCodeLink = `https://easynps.herokuapp.com/?l=${props.language}&a=${groupA}&b=${groupB}&c=${groupC}&pt=${props.productType}`
 
     return(
         <div className="scan-container">

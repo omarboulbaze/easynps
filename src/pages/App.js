@@ -18,10 +18,8 @@ import Sweepstake from "../components/form/questions/sweepstake/sweepstake";
 import Thanks from "../components/form/questions/thanks/thanks";
 //importing text
 import translations from "../translations/text.json";
-
 //importing axios
 const axios = require('axios');
-
 //fetch URL paramaters
 const params = new URLSearchParams(window.location.search);
 
@@ -29,7 +27,7 @@ const params = new URLSearchParams(window.location.search);
 
 
 function App() {
-    
+
     //dynamic language for the web application
     const [text,setText] = useState(translations.french);
 
@@ -39,36 +37,18 @@ function App() {
     },[])
 
     const [alertVisible, setAlertVisible] = useState(false);
-
     const [formCompleted, setFormCompleted] = useState(false);
 
-    //Setting all the data that I want to retrieve from the user as a state
-    const [ltr, setLtr] = useState();
-    const [ltrComment, setLtrComment] = useState();
-    const [availability, setAvailability] = useState();
-    const [caringAboutYou, setCaringAboutYou] = useState();
-    const [expertAdvice, setExpertAdvice] = useState();
-    const [varietyOfProducts, setVarietyOfProducts] = useState();
-    const [productInStock, setProductInStock] = useState();
-    const [demos, setDemos] = useState();
-    const [friendliness, setFriendliness] = useState();
-    const [pricesCompetition, setPricesCompetition] = useState();
-    const [storeAppearence, setStoreAppearence] = useState();
-    const [safeToShop, setSafeToShop] = useState();
-    const [easeOfShopping, setEaseOfShopping] = useState();
-    const [cleaning, setCleaning] = useState();
-    const [gender, setGender] = useState("Prefer not to answer");
-    const [age, setAge] = useState("Prefer not to answer");
-    const [feedback, setFeedback] = useState();
-    const [firstName, setFirstName] = useState();
-    const [lastName, setLastName] = useState();
-    const [address, setAddress] = useState();
-    const [app, setApp] = useState();
-    const [city, setCity] = useState();
-    const [province, setProvince] = useState();
-    const [postal, setPostal] = useState();
-    const [phoneNumber, setPhoneNumber] = useState();
-    const [email, setEmail] = useState();
+//Setting all the data that I want to retrieve from the user as a state
+        const [ltr, setLtr] = useState(); const [ltrComment, setLtrComment] = useState(); const [availability, setAvailability] = useState(); const [caringAboutYou, setCaringAboutYou] = useState();
+        const [expertAdvice, setExpertAdvice] = useState(); const [varietyOfProducts, setVarietyOfProducts] = useState(); const [productInStock, setProductInStock] = useState();
+        const [demos, setDemos] = useState(); const [friendliness, setFriendliness] = useState(); const [pricesCompetition, setPricesCompetition] = useState();
+        const [storeAppearence, setStoreAppearence] = useState(); const [safeToShop, setSafeToShop] = useState(); const [easeOfShopping, setEaseOfShopping] = useState(); 
+        const [cleaning, setCleaning] = useState(); const [gender, setGender] = useState("Prefer not to answer"); const [age, setAge] = useState("Prefer not to answer");
+        const [feedback, setFeedback] = useState(); const [firstName, setFirstName] = useState(); const [lastName, setLastName] = useState(); const [address, setAddress] = useState();
+        const [app, setApp] = useState(); const [city, setCity] = useState(); const [province, setProvince] = useState(); const [postal, setPostal] = useState(); const [phoneNumber, setPhoneNumber] = useState();
+        const [email, setEmail] = useState();
+        
 
     const questionTab = [
                         <Introduction text={text} setFormCompleted={setFormCompleted}/>,
@@ -89,11 +69,11 @@ function App() {
 
     const [nextBtnVisible, setNextBtnVisible] = useState(true);
     
+    //when form is completed, store the review in the database
     useEffect(() => {
         if(percentage>=100){
             setNextBtnVisible(false);
-
-            axios.post('http://192.168.0.186:3001/addReview', {
+            axios.post(`http://192.168.0.186:3001/addReview`, {
                 language: params.get('l'),
                 productType: params.get('pt'),
                 groupA: params.get('a'),
@@ -140,7 +120,6 @@ function App() {
        },[question]);
 
     return (
-
         <>
            <Alert text={text} alertVisible={alertVisible} setAlertVisible={setAlertVisible}/>
            <Banner link="./scan"/>

@@ -5,6 +5,9 @@
 /.pnp
 .pnp.js
 
+# Environnement variables
+.env
+
 # testing
 /coverage
 
