@@ -73,7 +73,7 @@ function App() {
     useEffect(() => {
         if(percentage>=100){
             setNextBtnVisible(false);
-            axios.post(`http://192.168.0.186:3001/addReview`, {
+            axios.post(process.env.BACKEND + `/addReview`, {
                 language: params.get('l'),
                 productType: params.get('pt'),
                 groupA: params.get('a'),

@@ -3,6 +3,9 @@ var mongoose = require('mongoose');
 
 const app = express();
 
+//dotenv
+require('dotenv').config({path:'./../.env'});
+
 const PORT = process.env.PORT || 3001;
 
 //avoiding cross origin security problems
@@ -11,9 +14,10 @@ app.use(cors());
 //parsing to json type
 app.use(express.json())
 
+console.log(process.env);
 
 //Set up default mongoose connection
-mongoose.connect('mongodb://localhost:27017/easynps', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.MONGODB , {useNewUrlParser: true, useUnifiedTopology: true});
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));

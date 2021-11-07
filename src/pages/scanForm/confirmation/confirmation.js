@@ -47,8 +47,6 @@ function Confirmation(props){
     
     //Data stored in the QR code : l= Language, pt= Product Type, a= Group A, b= Group B, c= Group C
     const qrCodeLink = window.location.origin + `/?l=${props.language}&a=${groupA}&b=${groupB}&c=${groupC}&pt=${props.productType}`
-    // const qrCodeLink = `https://easynps.herokuapp.com/?l=${props.language}&a=${groupA}&b=${groupB}&c=${groupC}&pt=${props.productType}`
-
     return(
         <div className="scan-container">
         <p className="form-text">Confirmez les informations suivantes :</p>

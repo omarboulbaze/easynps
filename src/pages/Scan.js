@@ -13,6 +13,8 @@ import Confirmation from "./scanForm/confirmation/confirmation";
 
 function Scan(){
 
+    
+
 //setting a personnalized title
     useEffect(()=>{
         document.title = "Easy NPS | Scan!";
@@ -32,7 +34,6 @@ function Scan(){
 
 
     useEffect(()=>{
-        setFormCompleted(false);
     },[pageIndex])
 
 
