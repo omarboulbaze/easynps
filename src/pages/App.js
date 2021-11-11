@@ -69,11 +69,13 @@ function App() {
 
     const [nextBtnVisible, setNextBtnVisible] = useState(true);
     
+  
+
     //when form is completed, store the review in the database
     useEffect(() => {
         if(percentage>=100){
             setNextBtnVisible(false);
-            axios.post(process.env.BACKEND + `/addReview`, {
+            axios.post(process.env.REACT_APP_BACKEND + `/addReview`, {
                 language: params.get('l'),
                 productType: params.get('pt'),
                 groupA: params.get('a'),
