@@ -34,6 +34,7 @@ function Scan(){
 
 
     useEffect(()=>{
+        setFormCompleted(false);
     },[pageIndex])
 
 

@@ -8,24 +8,26 @@ require('dotenv').config({path:'./../.env'});
 
 const PORT = process.env.PORT || 8800;
 
-//avoiding cross origin security problems
+//Avoiding cross origin security problems
 const cors = require('cors');
 app.use(cors());
 
 //parsing to json type
 app.use(express.json())
 
+//Establishing a database connection
+mongoose
+  .connect(process.env.MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+  })
+  .then(() => console.log("Database connected successfully!"))
+  .catch((err) => {
+    console.error(err);
+  });
 
-//Set up default mongoose connection
-mongoose.connect(process.env.MONGODB , {useNewUrlParser: true, useUnifiedTopology: true});
-
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  console.log("Database connected!")
-});
-
-//importing the exported model
+//Importing the exported model
 const Review = require('./models/review');
 
 app.post('/addReview',(req, res)=>
