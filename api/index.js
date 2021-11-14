@@ -30,7 +30,7 @@ mongoose
 //Importing the exported model
 const Review = require('./models/review');
 
-app.post('/addReview/api',(req, res)=>
+app.post('/api/addReview',(req, res)=>
     {
     console.log(req.body);
 
