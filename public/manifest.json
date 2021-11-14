@@ -1,0 +1,21 @@
+{
+    "short_name": "Easy NPS",
+    "name": "Easy NPS",
+    "description": "Easy NPS is a tool that makes filling online surveys easier for retail customers.",
+    "display": "standalone",
+    "orientation": "portrait",
+    "icons": [
+      {
+          "src": "/images/touch/android-chrome-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+      },
+    {
+      "src": "/images/touch/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }],
+    "start_url": "/",
+    "theme_color": "#0046be",
+    "background_color": "#0046be"
+  }
