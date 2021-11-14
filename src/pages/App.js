@@ -68,14 +68,16 @@ function App() {
     const percentage = parseInt(( (question + 1 )/questionTab.length) * 100);
 
     const [nextBtnVisible, setNextBtnVisible] = useState(true);
-    
   
+
+    //Using dotenv variable dynamically depending on the status of the app (developement or production)
+    const apiUrl = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_PROD_API_URL : process.env.REACT_APP_DEV_API_URL;
 
     //when form is completed, store the review in the database
     useEffect(() => {
         if(percentage>=100){
             setNextBtnVisible(false);
-            axios.post(process.env.REACT_APP_BACKEND + `/addReview`, {
+            axios.post(apiUrl + `/addReview`, {
                 language: params.get('l'),
                 productType: params.get('pt'),
                 groupA: params.get('a'),
