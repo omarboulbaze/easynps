@@ -15,7 +15,7 @@ function Skills(props){
     }
 
     useEffect(() => {
-        if(rating1 && rating2){
+        if(rating1 !== undefined && rating2 !== undefined){
             props.setFormCompleted(true)
         }else{
             props.setFormCompleted(false)

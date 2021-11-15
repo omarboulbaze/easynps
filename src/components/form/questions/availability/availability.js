@@ -10,7 +10,7 @@ function Availability(props){
 
     useEffect(() => {
 
-        if(rating){
+        if(rating !== undefined){
             props.setAvailability(rating)
             props.setFormCompleted(true)
         }else{

@@ -50,7 +50,7 @@ function Store(props){
     }
 
     useEffect(() => {
-        if(rating1 && rating2 && rating3 && rating4 && rating5 && rating6 && rating7 && rating8 && rating9 ){
+        if(rating1!== undefined && rating2!== undefined && rating3!== undefined && rating4!== undefined && rating5!== undefined && rating6!== undefined && rating7!== undefined && rating8!== undefined && rating9!== undefined ){
             props.setFormCompleted(true)
         }else{
             props.setFormCompleted(false)
