@@ -33,7 +33,14 @@ function App() {
 
     //determining which language to be displayed using the GET parameters provided in the URL
     useEffect(()=>{
-    if(params.get('l')==="eng"){ setText(translations.english) }else{ setText(translations.french) }
+     
+    if(params.get('l')==="eng"){ 
+      setText(translations.english) 
+      document.title = "Easy NPS | Rate your experience!"
+    }else{ 
+      setText(translations.french)
+      document.title = "Easy NPS | Notez votre expérience!"
+    }
     },[])
 
     const [alertVisible, setAlertVisible] = useState(false);
@@ -60,7 +67,7 @@ function App() {
                         <Personal text={text} setFormCompleted={setFormCompleted} setGender={setGender} setAge={setAge} />, 
                         <Overall text={text} setFormCompleted={setFormCompleted} setFeedback={setFeedback}/>, 
                         <Sweepstake text={text} setFormCompleted={setFormCompleted} setFirstName={setFirstName} setLastName={setLastName} setAddress={setAddress} setApp={setApp} setCity={setCity} 
-                        setProvince={setProvince} setPostal={setPostal} setPhoneNumber={setPhoneNumber} setEmail={setEmail}/>, 
+                        setProvince={setProvince} setPostal={setPostal} setPhoneNumber={setPhoneNumber} setEmail={setEmail}/>,
                         <Thanks text={text}/>
                         ]
     const [question, setQuestion] = useState(0);
@@ -73,7 +80,7 @@ function App() {
     //Using dotenv variable dynamically depending on the status of the app (developement or production)
     const apiUrl = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_PROD_API_URL : process.env.REACT_APP_DEV_API_URL;
 
-    //when form is completed, store the review in the database
+    //One the form is completed, store the review in the database
     useEffect(() => {
         if(percentage>=100){
             setNextBtnVisible(false);
@@ -113,9 +120,11 @@ function App() {
               })
               .then(function (response) {
                 console.log(response);
+                window.location.href = `/thanks?l=${params.get('l')}`;
               })
               .catch(function (error) {
                 console.log(error);
+                window.location.href = `/404?l=${params.get('l')}`;
               });
 
         }
