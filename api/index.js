@@ -48,7 +48,17 @@ app.post('/api/addReview',(req, res)=>
 
 app.get('/api/', (req,res)=>
             {
-            res.send(`<h1 style="background-color:blue">Hello World !</h1>`)
+            Review.find({}, (err, data) =>{
+              if(err) {
+                console.log(err);
+                res.status(500).send();
+              } else {
+                // res.status(201).send(data)
+              res.status(200).json(data);
+
+              }
+            })
+            
             }
         );
         

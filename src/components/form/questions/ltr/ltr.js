@@ -9,7 +9,6 @@ const [ltrComment, setLtrComment] = useState("");
 
 
 useEffect(() => {
-    console.log(rating)
     if(rating !== undefined){
         props.setLtr(rating)
         props.setFormCompleted(true)
