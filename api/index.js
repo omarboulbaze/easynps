@@ -53,9 +53,8 @@ app.get('/api/', (req,res)=>
                 console.log(err);
                 res.status(500).send();
               } else {
-                // res.status(201).send(data)
+              // res.status(201).send(data)
               res.status(200).json(data);
-
               }
             })
             

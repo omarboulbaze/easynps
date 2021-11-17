@@ -1,0 +1,53 @@
+.logo{
+  width: 2.5rem;
+}
+
+.body{
+    padding: 4rem;
+}
+
+.main.center-body{
+  text-align: center;
+  padding-block: 4rem;
+}
+
+.button.center-body{
+  text-align: center;
+  padding-block: 2rem;
+}
+
+.button.center-body .learnMore{
+  text-align: center;
+  background-color: #4bbdff;
+  border: 0px;
+  border-radius: 5px;
+  padding: 0.5rem;
+  padding-inline: 1rem;
+  color: white;
+}
+
+.button.center-body .learnMore:hover{
+  background-color: #82d2ff;
+}
+
+.image-container{
+  overflow: hidden;
+}
+
+.image-container img{
+  position: relative;
+  width: 50vw;
+  max-width: 30rem;
+  transform: rotate(55deg);
+}
+
+.second{
+  padding: 2rem;
+  text-align: center;
+}
+
+.banner-home{
+    background-image: linear-gradient(#ffffff, #f0f0f0);
+    padding: 1rem;
+}
+

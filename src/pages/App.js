@@ -23,14 +23,26 @@ const axios = require('axios');
 //fetch URL paramaters
 const params = new URLSearchParams(window.location.search);
 
-
-
-
 function App() {
 
     //dynamic language for the web application
     const [text,setText] = useState(translations.french);
 
+    //Checking if the URL is valid
+    const urlValid = ()=>{
+      if(params.get('l') && params.get('pt') && params.get('a') && params.get('b') && params.get('c')){
+        return true
+      }else{
+        return false
+      }
+    }
+    
+    //checking if URL is valid
+    useEffect(()=>{
+      if(!urlValid()) window.location = `/`
+     },[])
+
+     
     //determining which language to be displayed using the GET parameters provided in the URL
     useEffect(()=>{
      
