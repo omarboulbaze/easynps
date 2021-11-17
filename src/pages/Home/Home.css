@@ -8,7 +8,13 @@
 
 .main.center-body{
   text-align: center;
-  padding-block: 4rem;
+  padding-top: 2rem;
+}
+
+.easynps_description{
+  margin-inline: auto;
+  padding: 1rem;
+  max-width: 20rem;
 }
 
 .button.center-body{
@@ -30,6 +36,20 @@
   background-color: #82d2ff;
 }
 
+.container_image_description{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.container_image_description.reverse{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap-reverse;
+}
+
 .image-container{
   overflow: hidden;
 }
@@ -37,17 +57,18 @@
 .image-container img{
   position: relative;
   width: 50vw;
-  max-width: 30rem;
-  transform: rotate(55deg);
+  max-width: 20rem;
 }
 
 .second{
   padding: 2rem;
   text-align: center;
+  max-width: 20rem;
 }
 
 .banner-home{
     background-image: linear-gradient(#ffffff, #f0f0f0);
     padding: 1rem;
 }
+
 
