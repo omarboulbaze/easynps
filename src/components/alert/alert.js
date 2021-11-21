@@ -11,7 +11,9 @@ function Alert(props){
         props.alertVisible &&
         <>
         <div className="container-alert">
-            {props.text.error}
+            {
+                 props.alertType === "form" ? props.text.error : props.text.invalidCode
+            }
             <div className="btn-close" onClick={()=> props.setAlertVisible(false)}>
             <FontAwesomeIcon icon={faTimes} />
             </div>

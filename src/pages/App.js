@@ -29,20 +29,10 @@ function App() {
     const [text,setText] = useState(translations.french);
 
     //Checking if the URL is valid
-    const urlValid = ()=>{
-      if(params.get('l') && params.get('pt') && params.get('a') && params.get('b') && params.get('c')){
-        return true
-      }else{
-        return false
-      }
-    }
-    
-    //checking if URL is valid
     useEffect(()=>{
-      if(!urlValid()) window.location = `/`
+      if(!(params.get('l') && params.get('pt') && params.get('a') && params.get('b') && params.get('c'))) window.location = `/`
      },[])
 
-     
     //determining which language to be displayed using the GET parameters provided in the URL
     useEffect(()=>{
      
@@ -56,7 +46,9 @@ function App() {
     },[])
 
     const [alertVisible, setAlertVisible] = useState(false);
+    const [alertType, setAlertType] = useState("form");
     const [formCompleted, setFormCompleted] = useState(false);
+    const [codeValid, setCodeValid] = useState(false);
 
 //Setting all the data that I want to retrieve from the user as a state
         const [ltr, setLtr] = useState(); const [ltrComment, setLtrComment] = useState(); const [availability, setAvailability] = useState(); const [caringAboutYou, setCaringAboutYou] = useState();
@@ -92,8 +84,26 @@ function App() {
     //Using dotenv variable dynamically depending on the status of the app (developement or production)
     const apiUrl = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_PROD_API_URL : process.env.REACT_APP_DEV_API_URL;
 
-    //One the form is completed, store the review in the database
+   
+
+    //Once the form completed, store the review in the database
     useEffect(() => {
+
+      if(question >= 0 ){
+        axios.post(apiUrl + `/codeValid`, {
+          groupA: params.get('a'),
+          groupB: params.get('b'),
+          groupC: params.get('c')
+        })
+        .then( response => {
+          console.log(response);
+          setCodeValid(true);
+        })
+        .catch( error => {
+          console.log(error);
+        });
+      }
+
         if(percentage>=100){
             setNextBtnVisible(false);
             axios.post(apiUrl + `/addReview`, {
@@ -130,15 +140,14 @@ function App() {
                 phoneNumber: phoneNumber,
                 email: email
               })
-              .then(function (response) {
+              .then( response => {
                 console.log(response);
                 window.location.href = `/thanks?l=${params.get('l')}`;
               })
-              .catch(function (error) {
+              .catch( error => {
                 console.log(error);
                 window.location.href = `/404?l=${params.get('l')}`;
               });
-
         }
         setAlertVisible(false);
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -146,10 +155,12 @@ function App() {
 
     return (
         <>
-           <Alert text={text} alertVisible={alertVisible} setAlertVisible={setAlertVisible}/>
+           <Alert text={text} alertVisible={alertVisible} setAlertVisible={setAlertVisible} alertType={alertType}/>
            <Banner link="./scan"/>
            <ProgressBar max={questionTab.length} percentage={percentage}/>
-           <Form question={question} questionTab={questionTab} setQuestion={setQuestion} setAlertVisible={setAlertVisible} formCompleted={formCompleted} nextBtnVisible={nextBtnVisible}/>
+           <Form question={question} questionTab={questionTab} setQuestion={setQuestion} setAlertVisible={setAlertVisible} formCompleted={formCompleted} codeValid={codeValid} nextBtnVisible={nextBtnVisible}
+           setAlertType={setAlertType}
+           />
            <Footer/>
         </>
         

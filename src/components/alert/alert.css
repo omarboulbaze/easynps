@@ -15,10 +15,10 @@
 }
 
 .btn-close{
-    border: 0.2rem solid white;
+    border: 0.15rem solid white;
     display: inline;
     float: right;
-    border-radius: 100%;
+    border-radius: 50%;
     padding-inline: 0.5rem;
 }
 
