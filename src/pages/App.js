@@ -28,10 +28,10 @@ function App() {
     //dynamic language for the web application
     const [text,setText] = useState(translations.french);
 
-    //Checking if the URL is valid
-    useEffect(()=>{
-      if(!(params.get('l') && params.get('pt') && params.get('a') && params.get('b') && params.get('c'))) window.location = `/`
-     },[])
+    // //Checking if the URL is valid
+    // useEffect(()=>{
+    //   if(!(params.get('l') && params.get('pt') && params.get('a') && params.get('b') && params.get('c'))) window.location = `/`
+    //  },[])
 
     //determining which language to be displayed using the GET parameters provided in the URL
     useEffect(()=>{
@@ -96,7 +96,6 @@ function App() {
           groupC: params.get('c')
         })
         .then( response => {
-          console.log(response);
           setCodeValid(true);
         })
         .catch( error => {
@@ -141,7 +140,7 @@ function App() {
                 email: email
               })
               .then( response => {
-                console.log(response);
+                // console.log(response);
                 window.location.href = `/thanks?l=${params.get('l')}`;
               })
               .catch( error => {

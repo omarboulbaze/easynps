@@ -16,13 +16,39 @@ const [postalCode, setPostalCode] = useState("");
 const [phone, setPhone] = useState("");
 const [email, setEmail] = useState("");
 
+
+function isFormComplete(){
+    if(firstName && lastName && address && city && province && postalCode && phone && email){
+        return true
+    }else{
+        return false
+    }
+}
+
+useEffect(() => {
+    if(response===undefined){
+       props.setFormCompleted(false);
+    }else{
+        if(response==="no"){
+            props.setFormCompleted(true)
+        }else{
+            if(isFormComplete()){
+                props.setFormCompleted(true)
+            }else{
+                props.setFormCompleted(false)
+            }
+        }
+    }
+// eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [response, firstName, lastName, address, city, province, postalCode, phone, email]); 
+
 useEffect(() => {
     if(response==="yes"){
         setFormVisible(true)
     }else{
         setFormVisible(false)
     }
-  }, [response]); // Only re-run the effect if count changes
+  }, [response]); // Only re-run the effect if response changes
 
   function onChangeFirstName(event){
     setFirstName(event.target.value);

@@ -2,22 +2,31 @@ import { useEffect, useState} from 'react'
 
 function Personal(props){
 
-    const [gender, setGender] = useState("Prefer not to answer");
-    const [age, setAge] = useState("Prefer not to answer");
+    const [gender, setGender] = useState();
+    const [age, setAge] = useState();
 
     useEffect(()=>{
 
-props.setGender(gender)
+        props.setGender(gender)
 
        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[gender]);
 
     useEffect(()=>{
 
-props.setAge(age)
+        props.setAge(age)
 
        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[age]);
+
+    useEffect(()=>{
+        if(gender !== undefined && age !== undefined){
+            props.setFormCompleted(true)
+        }else{
+            props.setFormCompleted(false)
+        }
+       // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[gender, age])
 
     return(
         <>
