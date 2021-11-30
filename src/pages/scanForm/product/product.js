@@ -57,24 +57,24 @@ function Product(props){
                 <input type="radio" name="product-type" id="mp3" value="mp3" onClick={() => changeProductType("mp3")}/>
                 <span className="checkmark"></span>
             </label>
-            <label className="radioContainer" htmlFor="work">Fournitures de bureau ou scolaire et accessoires connexes
-                <input type="radio" name="product-type" id="work" value="work" onClick={() => changeProductType("work")}/>
+            <label className="radioContainer" htmlFor="office">Fournitures de bureau ou scolaire et accessoires connexes
+                <input type="radio" name="product-type" id="office" value="office" onClick={() => changeProductType("office")}/>
                 <span className="checkmark"></span>
             </label>
-            <label className="radioContainer" htmlFor="smart_living">Maison intelligente et accessoires connexes
-                <input type="radio" name="product-type" id="smart_living" value="smart_living" onClick={() => changeProductType("smart_living")}/>
+            <label className="radioContainer" htmlFor="smart">Maison intelligente et accessoires connexes
+                <input type="radio" name="product-type" id="smart" value="smart" onClick={() => changeProductType("smart")}/>
                 <span className="checkmark"></span>
             </label>
             <label className="radioContainer" htmlFor="tablet">Tablette et lecteurs électronique et accessoires connexes
                 <input type="radio" name="product-type" id="tablet" value="tablet" onClick={() => changeProductType("tablet")}/>
                 <span className="checkmark"></span>
             </label>
-            <label className="radioContainer" htmlFor="home_theater">Téléviseurs, cinéma maison et accessoires connexes
-                <input type="radio" name="product-type" id="home_theater" value="home_theater" onClick={() => changeProductType("home_theater")}/>
+            <label className="radioContainer" htmlFor="tv">Téléviseurs, cinéma maison et accessoires connexes
+                <input type="radio" name="product-type" id="tv" value="tv" onClick={() => changeProductType("tv")}/>
                 <span className="checkmark"></span>
             </label>
-            <label className="radioContainer" htmlFor="wearables">Techno prêt-à-porter et accessoires connexes
-                <input type="radio" name="product-type" id="wearables" value="wearables" onClick={() => changeProductType("wearables")}/>
+            <label className="radioContainer" htmlFor="wearable">Techno prêt-à-porter et accessoires connexes
+                <input type="radio" name="product-type" id="wearable" value="wearable" onClick={() => changeProductType("wearable")}/>
                 <span className="checkmark"></span>
             </label>
             <label className="radioContainer" htmlFor="toys">Jouets et accessoires connexes

@@ -19,5 +19,6 @@ Easy NPS is a tool that makes filling online surveys easier for customers. Becau
 - [React.js](https://reactjs.org/)
 - [Bootstrap](https://getbootstrap.com/)
 
-
+## Disclaimer
+This project has been made available on a public Github repository for informational and educational purposes only and it does not make any representation or replace the official surveys.
 
