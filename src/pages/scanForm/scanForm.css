@@ -49,7 +49,7 @@
 
 .scan-container{
     display: grid;
-  place-items: center;
+    place-items: center;
 }
 
 .form-text{

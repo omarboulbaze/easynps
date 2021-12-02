@@ -1,7 +1,10 @@
 //Importing react-scroll
 import { Link } from "react-scroll";
 //Importing react
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+//Fontawesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus, faMinus, faQrcode, faCommentDots } from '@fortawesome/free-solid-svg-icons'
 
 //Importing CSS
 import './Home.css'
@@ -14,6 +17,8 @@ import trophy from '../../images/trophy.png';
 const params = new URLSearchParams(window.location.search);
 
 function Home(){
+
+  const [page, setPage] = useState("reduced");
 
     //Changing theme color dynamically. Blue was by default in index.html
     document.head.querySelector('meta[name="theme-color"]').content = "#ffffff"
@@ -41,9 +46,30 @@ return(
     <>
 
     <div className="banner-home">
-        <img src={easyNpsLogo} alt="Easy NPS Logo" className="logo"/>
+      <div>
+      <img src={easyNpsLogo} alt="Easy NPS Logo" className="logo"/>
+      </div>
+          
+            {page === "expanded" 
+            ? 
+            <div className="slide_left">
+            <a href="/scan"><button className="menu_button"><FontAwesomeIcon icon={faQrcode}/> Scan</button></a>
+            <a href="/reviews"><button className="menu_button"><FontAwesomeIcon icon={faCommentDots}/> Reviews</button></a>
+            <button className="user_button" onClick={()=> setPage("reduced")}><FontAwesomeIcon icon={faMinus}/></button>
+            </div>
+            : 
+            <button className="user_button" onClick={()=> setPage("expanded")}><FontAwesomeIcon icon={faPlus}/></button>}
+          
     </div>
+    <Info/>
+    </>
+)
+}
 
+
+function Info(){
+  return(
+<>
     <div className="main center-body">
         <h1 style={{fontSize:"5rem"}}>NPS</h1>
         <h3>is now made simple.</h3>
@@ -102,11 +128,8 @@ return(
       </div>
 
     </div>
-    
-
-    
     </>
-)
+  )
 }
 
 export default Home;

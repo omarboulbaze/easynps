@@ -1,3 +1,8 @@
+:root {
+  --button: #4bbdff;
+  --button-hover: #82d2ff;
+}
+
 .logo{
   width: 2.5rem;
 }
@@ -24,7 +29,7 @@
 
 .button.center-body .learnMore{
   text-align: center;
-  background-color: #4bbdff;
+  background-color: var(--button);
   border: 0px;
   border-radius: 5px;
   padding: 0.5rem;
@@ -33,7 +38,7 @@
 }
 
 .button.center-body .learnMore:hover{
-  background-color: #82d2ff;
+  background-color: var(--button-hover);
 }
 
 .container_image_description{
@@ -69,6 +74,50 @@
 .banner-home{
     background-image: linear-gradient(#ffffff, #f0f0f0);
     padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
 }
 
+.user_button{
+  background-color: var(--button);
+  border: 0px;
+  border-radius: 5px;
+  padding: 0.5rem;
+  padding-inline: 1rem;
+  color: white;
+}
 
+.menu_container{
+  padding-top: 2rem ;
+  text-align: center;
+  display: grid;
+  place-items: center;
+}
+
+.menu_button{
+  background-color: var(--button);
+  border: 0px;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin-inline: 0.5rem;
+  color: white;
+}
+
+.slide_left{
+  animation-duration: 0.3s;
+  animation-name: slide_left;
+  animation-timing-function: ease-out;
+}
+
+@keyframes slide_left {
+  from {
+    opacity: 0;
+   transform: translateX(10rem) ;
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0px)
+  }
+}

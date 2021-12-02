@@ -93,7 +93,7 @@ function listReviews(){
 
     return(
         <>
-        <Banner/>
+        <Banner link="/"/>
 <div className="form-body"> 
   <table className="table table-striped table-hover table-responsive">
     <thead>

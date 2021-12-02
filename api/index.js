@@ -1,21 +1,18 @@
-const express = require('express');
-var mongoose = require('mongoose');
-
-const app = express();
-
-//dotenv
+// Dotenv
 require('dotenv').config({path:'./../.env'});
 
-const PORT = process.env.PORT || 8800;
 
-//Avoiding cross origin security problems
+// Express.js
+const express = require('express');
+const app = express();
+// Parsing to json type
+app.use(express.json())
+// Avoiding cross origin security problems
 const cors = require('cors');
 app.use(cors());
 
-//parsing to json type
-app.use(express.json())
-
-//Establishing a database connection
+// Establishing a database connection
+const mongoose = require('mongoose');
 mongoose
   .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
@@ -27,9 +24,10 @@ mongoose
     console.error(err);
   });
 
-//Importing the exported model
+// Importing the exported models
 const Review = require('./models/review');
 
+// Adding a review to the database.
 app.post('/api/addReview',(req, res)=>
     {
     console.log(req.body);
@@ -46,6 +44,7 @@ app.post('/api/addReview',(req, res)=>
     }
 );
 
+// Checking if the user's code is already used or not before letting access the form.
 app.post('/api/codeValid',(req, res)=>
     {
     const codes  = req.body;
@@ -56,14 +55,14 @@ app.post('/api/codeValid',(req, res)=>
         if(data){
           res.status(401).send("The QR code you scanned is invalid. Please scan a valid code.")
         }else{
-          res.status(200).json({msg: "OK"})
+          res.status(200).send("OK")
         }
-        
             }
         );
     }
 );
 
+// Returning all reviews that exists in the database.
 app.get('/api/', (req,res)=>
             {
             Review.find({}, (err, data) =>{
@@ -71,7 +70,6 @@ app.get('/api/', (req,res)=>
                 console.log(err);
                 res.status(500).send();
               } else {
-              // res.status(201).send(data)
               res.status(200).json(data);
               }
             })
@@ -79,7 +77,7 @@ app.get('/api/', (req,res)=>
             }
         );
 
-
+const PORT = process.env.PORT || 8800;
 app.listen(PORT, ()=>{
    console.log(`Server started on ${PORT}...`)
 })
