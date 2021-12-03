@@ -49,17 +49,21 @@ app.post('/api/codeValid',(req, res)=>
     {
     const codes  = req.body;
     
-    Review.findOne({groupA : codes.groupA, groupB : codes.groupB, groupC : codes.groupC}).then( (data) => 
-        {
-
-        if(data){
-          res.status(401).send("The QR code you scanned is invalid. Please scan a valid code.")
-        }else{
-          res.status(200).send("OK")
-        }
-            }
-        );
+    if(!codes.groupA || !codes.groupB || !codes.groupC ){
+      res.status(401).send("The QR code you scanned is invalid. Please scan a valid code.")
+    }else{
+      Review.findOne({groupA : codes.groupA, groupB : codes.groupB, groupC : codes.groupC}).then( (data) => 
+      {
+      if(data){
+        res.status(401).send("The QR code you scanned is invalid. Please scan a valid code.")
+      }else{
+        res.status(200).send("OK")
+      }
+          }
+      );
+  }
     }
+    
 );
 
 // Returning all reviews that exists in the database.

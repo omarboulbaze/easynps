@@ -95,7 +95,7 @@ function App() {
           groupB: params.get('b'),
           groupC: params.get('c')
         })
-        .then( response => {
+        .then( () => {
           setCodeValid(true);
         })
         .catch( error => {
