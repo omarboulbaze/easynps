@@ -58,4 +58,18 @@
     font-weight: bold;
 }
 
+.btn_disconnect{
+    background-color: transparent;
+    border: none;
+    padding: 1rem;  
+    font-size: 2.5rem;
+    color: #0046BE;
+    transition: all 0.1s ease-in;
+}
+
+.btn_disconnect:hover{
+    opacity: 0.9;
+    transform: scale(150%);
+}
+
 

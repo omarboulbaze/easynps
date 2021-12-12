@@ -8,6 +8,7 @@ import ScanForm from "./scanForm/scanForm";
 import Language from "./scanForm/language/language";
 import Product from "./scanForm/product/product";
 import Employee from "./scanForm/employee/employee";
+import Bill from "./scanForm/bill/bill";
 import Confirmation from "./scanForm/confirmation/confirmation";
 
 
@@ -30,15 +31,29 @@ function Scan(){
     const [bill, setBill] = useState("");
     const [language, setLanguage] = useState("");
     const [productType, setProductType] = useState("");
-
+    const isSignedUp = localStorage.getItem('firstName') && localStorage.getItem('lastName');
 
 
     useEffect(()=>{
         setFormCompleted(false);
+        if(pageIndex===1){
+            localStorage.setItem('firstName',firstName);
+            localStorage.setItem('lastName',lastName);
+        }
     },[pageIndex])
 
+    useEffect(()=>{
+        if(isSignedUp){
+            setFirstName(localStorage.getItem('firstName'));
+            setLastName(localStorage.getItem('lastName'));
+            setPageIndex(1);
+        }else{
+           setPageIndex(0)
+        }
+    },[])
 
-    const scanPageTab = [<Employee setFormCompleted={setFormCompleted} setFirstName={setFirstName} setLastName={setLastName} setCash={setCash} setBill={setBill} />,
+    const scanPageTab = [<Employee setFormCompleted={setFormCompleted} setFirstName={setFirstName} setLastName={setLastName} />,
+                        <Bill firstName={firstName} lastName={lastName} setFormCompleted={setFormCompleted} setCash={setCash} setBill={setBill} />,
                         <Language setFormCompleted={setFormCompleted} setLanguage={setLanguage} />,
                         <Product setFormCompleted={setFormCompleted} setProductType={setProductType} />,
                         <Confirmation firstName={firstName} lastName={lastName} cash={cash} bill={bill} language={language} productType={productType} />];

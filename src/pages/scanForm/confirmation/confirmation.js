@@ -10,8 +10,8 @@ function Confirmation(props){
 
     //declaring variable used to make the group A,B,C numbers
 
-    const firstNameArray = props.firstName.split('');
-    const lastNameArray = props.lastName.split('');
+    const firstNameArray = props.firstName.toUpperCase().split('');
+    const lastNameArray = props.lastName.toUpperCase().split('');
     const cashArray = props.cash.split('');
     const billArray = props.bill.split('');
 
