@@ -53,12 +53,12 @@ return(
             {page === "expanded" 
             ? 
             <div className="slide_left">
-            <a href="/scan"><button className="menu_button"><FontAwesomeIcon icon={faQrcode}/> Scan</button></a>
-            <a href="/reviews"><button className="menu_button"><FontAwesomeIcon icon={faCommentDots}/> Reviews</button></a>
+            <a href="/scan"><button className="menu_button"><FontAwesomeIcon icon={faQrcode}/> Generate a QR Code</button></a>
+            <a href="/reviews"><button className="menu_button"><FontAwesomeIcon icon={faCommentDots}/> View the reviews</button></a>
             <button className="user_button" onClick={()=> setPage("reduced")}><FontAwesomeIcon icon={faMinus}/></button>
             </div>
             : 
-            <button className="user_button" onClick={()=> setPage("expanded")}><FontAwesomeIcon icon={faPlus}/></button>}
+            <button className="user_button" onClick={()=> setPage("expanded")}><FontAwesomeIcon icon={faPlus}/> Try the demo!</button>}
           
     </div>
     <Info/>
@@ -94,7 +94,7 @@ function Info(){
       <div className="second" id="second">
           <h3>Scan the QR code</h3>
           <div className="center-body">
-              <p>A QR code will be generated with each transaction. By scanning it, you automatically access the survey.</p>
+              <p>Easy NPS generates for you a QR code with each transaction. By scanning it, you automatically access the survey without having to manually enter the numbers in the receipt.</p>
           </div>
       </div>
 

@@ -40,7 +40,7 @@ function Scan(){
             localStorage.setItem('firstName',firstName);
             localStorage.setItem('lastName',lastName);
         }
-    },[pageIndex])
+    },[pageIndex, firstName, lastName])
 
     useEffect(()=>{
         if(isSignedUp){
@@ -50,7 +50,7 @@ function Scan(){
         }else{
            setPageIndex(0)
         }
-    },[])
+    },[isSignedUp])
 
     const scanPageTab = [<Employee setFormCompleted={setFormCompleted} setFirstName={setFirstName} setLastName={setLastName} />,
                         <Bill firstName={firstName} lastName={lastName} setFormCompleted={setFormCompleted} setCash={setCash} setBill={setBill} />,

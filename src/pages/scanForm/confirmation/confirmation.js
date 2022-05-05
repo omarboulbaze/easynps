@@ -49,31 +49,31 @@ function Confirmation(props){
     const qrCodeLink = window.location.origin + `/?l=${props.language}&a=${groupA}&b=${groupB}&c=${groupC}&pt=${props.productType}`
     return(
         <div className="scan-container">
-        <p className="form-text">Confirmez les informations suivantes :</p>
+        <p className="form-text" style={{textAlign:"center"}}><span style={{fontSize:"2rem"}}>Please confirm the following informations.</span><br/>Once the QR code generated, the customer will be able to automatically access the survey by scanning it. </p>
         
         <div className="confirmation-container">
             <div className="input-group">
                 <div className="input-group-prepend">
-                <span className="input-group-text" id="basic-addon1">Groupe A</span>
+                <span className="input-group-text" id="basic-addon1">Group A</span>
                 </div>
                 <input type="text" className="form-control" value={groupA} readOnly/>
             </div>
             <div className="input-group">
                 <div className="input-group-prepend">
-                <span className="input-group-text" id="basic-addon1">Groupe B</span>
+                <span className="input-group-text" id="basic-addon1">Group B</span>
                 </div>
                 <input type="text" className="form-control" value={groupB} readOnly/>
             </div>
             <div className="input-group">
                 <div className="input-group-prepend">
-                <span className="input-group-text" id="basic-addon1">Groupe C</span>
+                <span className="input-group-text" id="basic-addon1">Group C</span>
                 </div>
                 <input type="text" className="form-control" value={groupC} readOnly/>
             </div>
         </div>
 
         <div className="container-ok">
-        {!qrCodeVisible && <button className="scan-button" onClick={()=>setQrCodeVisible(true)}>Générer le code QR</button>}
+        {!qrCodeVisible && <button className="scan-button" onClick={()=>setQrCodeVisible(true)}>Generate the QR code</button>}
         {qrCodeVisible && <QRCode value={qrCodeLink} />}
         </div>
 

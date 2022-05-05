@@ -108,6 +108,9 @@
   animation-duration: 0.3s;
   animation-name: slide_left;
   animation-timing-function: ease-out;
+  display: flex;
+  flex-direction: row;
+
 }
 
 @keyframes slide_left {

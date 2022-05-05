@@ -16,7 +16,7 @@ useEffect(()=>{
   const apiUrl = process.env.NODE_ENV === 'production' ? process.env.REACT_APP_PROD_API_URL : process.env.REACT_APP_DEV_API_URL;
   axios.get(apiUrl+'/')
   .then(res => {
-    if(res.data.length > 0){
+    if(res.data.length > 0){
    setReviews(res.data);
     }
   }).catch(e => console.log(e));
@@ -24,7 +24,7 @@ useEffect(()=>{
 
 function ptToString(productType){
   switch (productType) {
-    case "large_appliances" || "small_appliances":
+    case "large_appliances" || "small_appliances":
       return "Appliances";
 
     case "phone":
@@ -78,7 +78,7 @@ function listReviews(){
         <td>East</td>
         <td>District 13 (BB)</td>
         <td>Magasin 962- Marché Central</td>
-        <td>{ptToString(review.productType) === ("-" || "Other" || "Toys" ) ? ptToString(review.productType) : <><b>{ptToString(review.productType)}</b> and related accessories</>  }</td>
+        <td>{ptToString(review.productType) === ("-" || "Other" || "Toys" ) ? ptToString(review.productType) : <><b>{ptToString(review.productType)}</b> and related accessories</>  }</td>
         <td>{review.ltrComment ? review.ltrComment : "-"}</td>
         <td>{review.feedback ? review.feedback : "-"}</td> 
         <td>-</td> 

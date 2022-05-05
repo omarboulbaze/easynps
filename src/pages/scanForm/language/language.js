@@ -18,11 +18,11 @@ function Language(props){
 
     return(
         <div className="scan-container">
-        <p className="form-text">Quelle langue avez-vous utilisé lors de votre interaction avec le client ?</p>
+        <p className="form-text big center">What language did you use during your interaction with the customer?</p>
         
         <div className="my-4">
-        <button className={language==="fr" ? "scan-button active" : "scan-button"}  onClick={()=> changeLanguage("fr") } >Français</button>
-        <button className={language==="eng" ? "scan-button active" : "scan-button"}  onClick={()=> changeLanguage("eng")} >Anglais</button>
+        <button className={language==="fr" ? "scan-button active" : "scan-button"}  onClick={()=> changeLanguage("fr") } >French</button>
+        <button className={language==="eng" ? "scan-button active" : "scan-button"}  onClick={()=> changeLanguage("eng")} >English</button>
         </div>
 
         </div>

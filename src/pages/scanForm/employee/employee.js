@@ -17,7 +17,7 @@ function Employee(props){
     
       //checking if the inputs are completed before displaying OK button
     useEffect(()=>{
-        if(firstName && lastName ){
+        if( (firstName !== "") && (lastName !== "") ){
             props.setFormCompleted(true);
             props.setFirstName(firstName);
             props.setLastName(lastName);
@@ -25,15 +25,14 @@ function Employee(props){
         }else{
             props.setFormCompleted(false)
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[firstName, lastName])
+    })
 
     return(
         <div className="scan-container">
-          <p className="form-text">Merci d'avoir utilisé Easy NPS. Dans le but de faciliter les futures transactions, vos informations seront sauvegardées sur cet appareil.</p>
+          <p className="form-text center"><span style={{fontSize:"2rem"}}>Thank you for using Easy NPS.</span><br/><br/> In order to facilitate future transactions, this information will only be stored locally on this device.</p>
           <div>
-            <input type="text" className="text-input my-1" name="firstName" placeholder="Prénom" value={firstName} onChange={onChangeFirstName} required />
-            <input type="text" className="text-input my-1" name="lastName" placeholder="Nom" value={lastName} onChange={onChangeLastName} required />
+            <input type="text" className="text-input my-1" name="firstName" placeholder="First Name" value={firstName} onChange={onChangeFirstName} required />
+            <input type="text" className="text-input my-1" name="lastName" placeholder="Last Name" value={lastName} onChange={onChangeLastName} required />
           </div>
         </div>
     )

@@ -2,9 +2,8 @@
 import { useEffect, useState } from "react";
 //fontawesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAd, faAddressBook, faTrash, faTrashAlt, faTrashRestore, faUserAlt, faUserCircle } from "@fortawesome/free-solid-svg-icons";
-import { faUser } from "@fortawesome/free-regular-svg-icons";
-import { faAcquisitionsIncorporated } from "@fortawesome/free-brands-svg-icons";
+import { faTrash,  faUserAlt } from "@fortawesome/free-solid-svg-icons";
+
 
 function Bill(props){
 
@@ -61,10 +60,10 @@ function Bill(props){
         <div className="scan-container">
           <button className="btn_disconnect" title="Supprimer" onClick={()=>{deleteAccount()}}><FontAwesomeIcon icon={faUserAlt} /><sup style={{fontSize: "1rem", color:"#dc3545"}}><FontAwesomeIcon icon={faTrash} /></sup></button>
            <p style={{fontSize: "2rem", color:"#212529", fontWeight:"bold"}}>{props.firstName} {props.lastName}</p>
-          <p className="form-text">Entrez les informations suivantes</p>
+          <p className="form-text">Enter the following informations</p>
           <div>
-            <input type="number" inputMode="numeric" className="text-input my-1" name="cash" placeholder="Caisse" value={cash} onChange={onChangeCash} required />
-            <input type="number" inputMode="numeric" className="text-input my-1" name="bill" placeholder="Numéro de la facture" value={bill} onChange={onChangeBill} required />
+            <input type="number" inputMode="numeric" className="text-input my-1" name="cash" placeholder="Cash number" value={cash} onChange={onChangeCash} required />
+            <input type="number" inputMode="numeric" className="text-input my-1" name="bill" placeholder="Bill number" value={bill} onChange={onChangeBill} required />
           </div>
         </div>
     )
